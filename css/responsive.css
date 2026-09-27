@@ -1,0 +1,184 @@
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 768px) {
+
+    .our-story {
+        flex-direction: column;
+    }
+
+    .values-container {
+        flex-direction: column;
+    }
+
+    .our-story img {
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .about-intro,
+    .our-story,
+    .our-values,
+    .quality-guarantee {
+        padding: 35px 5%;
+    }
+
+    .about-intro h1 {
+        font-size: 30px;
+    }
+
+}
+@media (max-width: 900px) {
+
+    .hero {
+        gap: 35px;
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero h1 {
+        text-align: center;
+        font-size: 42px;
+    }
+
+    .hero-label {
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+
+
+
+
+    .benefits {
+        flex-direction: column;
+    }
+
+    .benefit {
+        width: 100%;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .featured-heading {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .featured-heading .section-label {
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        height: 240px;
+    }
+
+    .why-bruliki,
+    .featured {
+        padding: 55px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .benefit {
+        padding: 25px;
+    }
+
+    .home-cta {
+        margin-top: 40px;
+        padding: 40px 25px;
+    }
+
+    .home-cta h2 {
+        font-size: 28px;
+    }
+
+}
