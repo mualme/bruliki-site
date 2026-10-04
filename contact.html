@@ -20,7 +20,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="catalog.html">Catalog</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -28,8 +28,9 @@
     <main>
         <h1>Get in Touch</h1>
         <p>Have questions or want to place an order? Fill out the form below.</p>
-
-        <form action="#" method="POST">
+        
+        <form action="demo-result.html" method="get" aria-describedby="demo-note">
+            <p id="demo-note">Demo only. Your information is not sent or stored. Use sample details.</p>
             <div>
                 <label for="username">Your Name:</label>
                 <input type="text" id="username" name="username" required>
@@ -45,6 +46,17 @@
             <p style="margin-top: 20px; text-align: center;">
                 <button type="submit" class="btn">Send message</button>
             </p>
+        <section class="faq-section" style="margin: 2rem 0;">
+                <h3>Frequently Asked Questions</h3>
+                <details style="margin-bottom: 1rem; cursor: pointer;">
+                    <summary><strong>How can I place an order?</strong></summary>
+                    <p style="margin-top: 0.5rem;">You can pre-order any item through our catalog by clicking the pre-order button and filling out the contact form.</p>
+                </details>
+                <details style="margin-bottom: 1rem; cursor: pointer;">
+                    <summary><strong>What is the delivery time?</strong></summary>
+                    <p style="margin-top: 0.5rem;">Delivery usually takes 3 to 5 business days depending on your location.</p>
+                </details>
+        </section>
         </form>
     </main>
 
