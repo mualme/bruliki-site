@@ -2,8 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Contact Us - Bruliki</title>
 
     <link rel="icon" type="star/jpg" href="star.jpg">
@@ -25,39 +23,68 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Get in Touch</h1>
-        <p>Have questions or want to place an order? Fill out the form below.</p>
-        
-        <form action="demo-result.html" method="get" aria-describedby="demo-note">
-            <p id="demo-note">Demo only. Your information is not sent or stored. Use sample details.</p>
-            <div>
-                <label for="username">Your Name:</label>
-                <input type="text" id="username" name="username" required>
+    <main class="contact-main">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p class="contact-subtitle">Have questions or want to place an order? Fill out the form below or check the FAQ.</p>
+
+            <div class="contact-layout">
+                
+                <section class="form-section">
+                    <h2>Send us a message</h2>
+                    <p id="demo-note" class="form-demo-text">Demo only. Your information is not sent or stored. Use sample details.</p>
+                    
+                    <form action="demo-result.html" method="GET" aria-describedby="demo-note">
+                        <div class="form-group">
+                            <label for="username">Your Name:</label>
+                            <input type="text" id="username" name="username" required autocomplete="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Your Message / Order Details:</label>
+                            <textarea id="comment" name="comment" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">Send message</button>
+                    </form>
+                </section>
+
+                <aside class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <details class="faq-item">
+                        <summary>How can I place an order?</summary>
+                        <p>You can pre-order any item through our catalog by filling out this form with product details.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What is the delivery time?</summary>
+                        <p>Delivery usually takes from 3 to 5 business days depending on your region and city.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Are all accessories original?</summary>
+                        <p>Yes, we carefully select and guarantee the high quality and authenticity of all items.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I return an item?</summary>
+                        <p>Returns are accepted within 14 days if the item is unused and in its original packaging.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you offer international shipping?</summary>
+                        <p>Currently, we ship across Kazakhstan, with international options available upon request.</p>
+                    </details>
+                </aside>
+
             </div>
-            <div>
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="comment">Your Message / Order Details:</label>
-                <textarea id="comment" name="comment" required></textarea>
-            </div>
-            <p style="margin-top: 20px; text-align: center;">
-                <button type="submit" class="btn">Send message</button>
-            </p>
-        <section class="faq-section" style="margin: 2rem 0;">
-                <h3>Frequently Asked Questions</h3>
-                <details style="margin-bottom: 1rem; cursor: pointer;">
-                    <summary><strong>How can I place an order?</strong></summary>
-                    <p style="margin-top: 0.5rem;">You can pre-order any item through our catalog by clicking the pre-order button and filling out the contact form.</p>
-                </details>
-                <details style="margin-bottom: 1rem; cursor: pointer;">
-                    <summary><strong>What is the delivery time?</strong></summary>
-                    <p style="margin-top: 0.5rem;">Delivery usually takes 3 to 5 business days depending on your location.</p>
-                </details>
-        </section>
-        </form>
+        </div>
     </main>
 
     <footer>
