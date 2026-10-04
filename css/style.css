@@ -10,6 +10,12 @@ body {
     color: #222222;
 }
 
+img{
+   display: block;
+    max-width: 100%;
+    height:auto;
+}
+
 header {
     background-color: #28352D;
     padding: 20px 40px;
@@ -72,7 +78,7 @@ p {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 40px;
 }
@@ -188,6 +194,7 @@ footer {
     background-color:#eaeaea;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 60px;
     border-radius: 8px;
@@ -238,6 +245,7 @@ footer {
 
 .values-container {
     display: flex;
+    flex-direction: column;
     gap: 30px;
 }
 
@@ -294,6 +302,7 @@ footer {
 .hero {
     min-height: 600px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
@@ -411,6 +420,7 @@ footer {
 
 .benefits {
     display: flex;
+    flex-direction: column;
     gap: 25px;
     justify-content: space-between;
 }
@@ -489,7 +499,7 @@ footer {
 
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 30px;
 }
 
@@ -553,7 +563,8 @@ footer {
     border-radius: 12px;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items:flex-start;
     justify-content: space-between;
     gap: 40px;
 }
