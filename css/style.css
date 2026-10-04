@@ -585,3 +585,121 @@ nav a:focus,
     outline: 3px solid rgba(119, 43, 43, 0.35);
     outline-offset: 4px;
 }
+.contact-main {
+    padding: 3rem 0;
+}
+
+.contact-subtitle {
+    margin-bottom: 2.5rem;
+    color: #555;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.form-section {
+    background: #fbfbfb;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #eaeaea;
+}
+
+.form-section h2, .faq-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #172033;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #185abc;
+    box-shadow: 0 0 0 3px rgba(24, 90, 188, 0.15);
+}
+
+.form-demo-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.faq-section {
+    background: #fbfbfb;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #eaeaea;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.faq-item[open] {
+    border-color: #172033;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: #172033;
+    outline: none;
+    list-style: none;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.faq-item[open] summary::after {
+    content: "—";
+}
+
+.faq-item p {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #556070;
+    line-height: 1.5;
+}
