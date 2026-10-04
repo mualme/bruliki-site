@@ -167,13 +167,13 @@ footer {
 }
 
 .about-intro {
-    padding: 60px 8%;
+    padding: 35px 5%;
     text-align: center;
 }
 
 .about-intro h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -190,7 +190,7 @@ footer {
 }
 
 .our-story {
-    padding: 50px 8%;
+    padding: 35px 5%;
     background-color:#eaeaea;
 
     display: flex;
@@ -232,7 +232,7 @@ footer {
 }
 
 .our-values {
-    padding: 50px 8%;
+    padding: 35px 5%;
     text-align: center;
 }
 
@@ -276,7 +276,7 @@ footer {
 }
 
 .quality-guarantee {
-    padding: 50px 8%;
+    padding: 35px 5%;
     background-color:#eaeaea;
     text-align: center;
     border-radius: 8px;
