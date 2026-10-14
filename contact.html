@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Registration - Bruliki</title>
+    <title>Contact Us - Bruliki</title>
 
     <link rel="icon" type="image/jpeg" href="star.jpg">
     
@@ -22,21 +22,26 @@
                 <li><a href="catalog.html">Catalog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html" aria-current="page">Contact</a></li>
+                <li><a href="register.html">Register</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contact-main py-5">
-        <div class="container">
-            <h1 class="text-center mb-3">Get in Touch & Register</h1>
-            <p class="text-center contact-subtitle mb-5">Have questions, want to place an order, or create an account? Choose a form below.</p>
+        <div class="container" style="max-width: 800px;">
+            
+            <div id="registrationSuccessAlert" class="alert alert-success d-none align-items-center mb-4" role="alert">
+                <div>
+                    <strong>Registration successful!</strong> Welcome to Bruliki. Your details have been auto-filled below. Please complete your order request.
+                </div>
+            </div>
 
-            <div class="row g-5">
+            <div class="row g-4">
                 
-                <div class="col-lg-6">
+                <div class="col-12">
                     <section class="form-section p-4 border rounded shadow-sm bg-white">
-                        <h2 class="mb-3">Send us a message</h2>
-                        <p id="demo-note" class="form-demo-text text-muted mb-4">Demo only. Your information is not sent or stored. Use sample details.</p>
+                        <h1 class="mb-2 text-center">Place an Order / Contact Us</h1>
+                        <p id="demo-note" class="text-center text-muted mb-4">Demo only. Information is not stored.</p>
                         
                         <form action="demo-result.html" method="GET" class="needs-validation" novalidate aria-describedby="demo-note">
                             <div class="mb-3">
@@ -55,106 +60,17 @@
 
                             <div class="mb-3">
                                 <label for="comment" class="form-label">Your Message / Order Details:</label>
-                                <textarea class="form-control" id="comment" name="comment" rows="4" required minlength="10" maxlength="500"></textarea>
+                                <textarea class="form-control" id="comment" name="comment" rows="5" required minlength="10" maxlength="500" placeholder="Specify item name and your order details..."></textarea>
                                 <div class="valid-feedback">Message looks great!</div>
                                 <div class="invalid-feedback">Message must be between 10 and 500 characters.</div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100">Send message</button>
+                            <button type="submit" class="btn btn-primary w-100">Send Order Request</button>
                         </form>
                     </section>
                 </div>
 
-                <div class="col-lg-6">
-                    <section class="form-section p-4 border rounded shadow-sm bg-white">
-                        <h2 class="mb-3">Create an Account</h2>
-                        <p class="text-muted mb-4">Register to track your pre-orders and get updates.</p>
-                        
-                        <form class="needs-validation" novalidate>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="firstName" class="form-label">First Name:</label>
-                                    <input type="text" class="form-control" id="firstName" name="firstName" required minlength="2">
-                                    <div class="invalid-feedback">Min 2 characters required.</div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="lastName" class="form-label">Last Name:</label>
-                                    <input type="text" class="form-control" id="lastName" name="lastName" required minlength="2">
-                                    <div class="invalid-feedback">Min 2 characters required.</div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="regEmail" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="regEmail" name="regEmail" required>
-                                <div class="invalid-feedback">Please enter a valid email.</div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="password" class="form-label">Password:</label>
-                                    <input type="password" class="form-control" id="password" name="password" required minlength="8">
-                                    <div class="invalid-feedback">Minimum 8 characters.</div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="confirmPassword" class="form-label">Confirm Password:</label>
-                                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required minlength="8">
-                                    <div class="invalid-feedback">Passwords must match.</div>
-                                </div>
-                            </div>
-
-                            <fieldset class="mb-3 border p-2 rounded">
-                                <legend class="float-none w-auto px-2 fs-6 fw-semibold">Gender:</legend>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male">
-                                    <label class="form-check-label" for="genderMale">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
-                                    <label class="form-check-label" for="genderFemale">Female</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="genderOther" value="prefer_not_to_say" checked>
-                                    <label class="form-check-label" for="genderOther">Prefer not to say</label>
-                                </div>
-                            </fieldset>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Interests / Hobbies:</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="watches" id="hobbyWatches">
-                                    <label class="form-check-label" for="hobbyWatches">Luxury Watches</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="accessories" id="hobbyAccessories">
-                                    <label class="form-check-label" for="hobbyAccessories">Accessories & Jewelry</label>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="country" class="form-label">Country:</label>
-                                <select class="form-select" id="country" name="country" required>
-                                    <option value="" selected disabled>Choose country...</option>
-                                    <option value="KZ">Kazakhstan</option>
-                                    <option value="US">United States</option>
-                                    <option value="GB">United Kingdom</option>
-                                    <option value="DE">Germany</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a country.</div>
-                            </div>
-
-                            <div class="d-flex gap-2">
-                                <button type="submit" class="btn btn-success flex-grow-1">Register</button>
-                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                            </div>
-                        </form>
-                    </section>
-                </div>
-
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12">
+                <div class="col-12 mt-4">
                     <section class="faq-section p-4 border rounded bg-white">
                         <h2 class="mb-4 text-center">Frequently Asked Questions</h2>
                         
@@ -165,22 +81,17 @@
 
                         <details class="faq-item mb-2 p-2 border-bottom">
                             <summary class="fw-semibold">What is the delivery time?</summary>
-                            <p class="mt-2 text-muted">Delivery usually takes from 3 to 5 business days depending on your region and city.</p>
-                        </details>
-
-                        <details class="faq-item mb-2 p-2 border-bottom">
-                            <summary class="fw-semibold">Are all accessories original?</summary>
-                            <p class="mt-2 text-muted">Yes, we carefully select and guarantee the high quality and authenticity of all items.</p>
+                            <p class="mt-2 text-muted">Delivery usually takes from 3 to 5 business days across Kazakhstan.</p>
                         </details>
 
                         <details class="faq-item mb-2 p-2">
-                            <summary class="fw-semibold">Do you offer international shipping?</summary>
-                            <p class="mt-2 text-muted">Currently, we ship across Kazakhstan, with international options available upon request.</p>
+                            <summary class="fw-semibold">Are all accessories original?</summary>
+                            <p class="mt-2 text-muted">Yes, we guarantee high quality and authenticity for all luxury products.</p>
                         </details>
                     </section>
                 </div>
-            </div>
 
+            </div>
         </div>
     </main>
 
@@ -189,7 +100,33 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script src="js/validation.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if (urlParams.get('registered') === 'true') {
+                const alertBox = document.getElementById('registrationSuccessAlert');
+                alertBox.classList.remove('d-none');
+                alertBox.classList.add('d-flex');
+
+                if (urlParams.get('name')) {
+                    document.getElementById('username').value = urlParams.get('name');
+                }
+                if (urlParams.get('email')) {
+                    document.getElementById('email').value = urlParams.get('email');
+                }
+            }
+
+            const form = document.querySelector('form.needs-validation');
+            form.addEventListener('submit', (event) => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            });
+        });
+    </script>
 </body>
 </html>
