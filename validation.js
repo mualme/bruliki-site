@@ -26,33 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
      
         form.addEventListener('submit', event => {
+            event.preventDefault();
+            
             validatePasswords();
             form.classList.add('was-validated');
-
+            
             if (!form.checkValidity()) {
-                event.preventDefault();
                 event.stopPropagation();
                 return;
             }
-
-
+            
             if (form.id === 'registerForm') {
-                event.preventDefault();
-
                 const firstName = form.querySelector('#firstName').value.trim();
                 const lastName = form.querySelector('#lastName').value.trim();
                 const email = form.querySelector('#regEmail').value.trim();
-                const fullName = `${firstName} ${lastName}`;
-
+                
                 const params = new URLSearchParams({
                     registered: 'true',
-                    name: fullName,
+                    name: `${firstName} ${lastName}`,
                     email: email
                 });
-
+                
                 window.location.href = `contact.html?${params.toString()}`;
             }
-
         });
 
         form.addEventListener('reset', () => {
