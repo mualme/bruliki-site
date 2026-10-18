@@ -1,16 +1,20 @@
-# Bruliki - an accessories online store
-team members: Sabina Kerimkulova, Aliya Muslimova, Albina Adenova
-page ownership: Aliya Muslimova
-URL:  https://mualme.github.io/bruliki-site/
-A web development project featuring a modern, vibrant yet classy design for a luxury eyewear and accessories boutique.
+Bruliki — Accessories Online Store
+Team members: Sabina Kerimkulova, Aliya Muslimova, Albina Adenova
 
+Website: https://mualme.github.io/bruliki-site/index.html
 
-## Project Structure
-- `index.html` - Home page with a welcoming introduction
-- `catalog.html` - Product catalog featuring 6 items in a responsive CSS Grid
-- `about.html` - Company background and core values
-- `contact.html` - Interactive inquiry form with semantic labels and inputs
-- `demo-result.html` - Static demonstration result page for the contact form
-- `css/style.css` - Main stylesheet (Flexbox navigation, Grid layout, custom luxury aesthetic)
-- `css/responsive.css` - Media queries for mobile adaptation
-- `images/` - Directory for product visuals and graphics
+Project Description: Bruliki is an online accessories store website featuring a home page, product catalogue, store information, and contact and registration forms.
+
+Project Structure: 
+index.html — Home page
+catalog.html — Product catalogue
+about.html — About the store
+contact.html — Contact form
+register.html — Registration form
+css/style.css — Main styles
+css/responsive.css — Responsive styles
+js/validation.js — Registration validation
+
+Forms and Validation: We created Contact Us and Registration forms using HTML5, Bootstrap 5, and JavaScript. We added required fields, email validation, character limits, password matching, validation feedback, and Reset functionality. 
+
+Conclusion: This project helped us practise HTML5 validation, Bootstrap styling, JavaScript form validation, responsive design, and form testing.
