@@ -1,4 +1,5 @@
 Bruliki — Accessories Online Store
+
 Team members: Sabina Kerimkulova, Aliya Muslimova, Albina Adenova
 
 Website: https://mualme.github.io/bruliki-site/index.html
