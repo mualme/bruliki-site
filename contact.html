@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,12 @@
     <title>Contact Us - Bruliki</title>
 
     <link rel="icon" type="image/jpeg" href="star.jpg">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -16,6 +20,7 @@
 <body>
     <header>
         <div class="logo">Bruliki</div>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -29,65 +34,193 @@
 
     <main class="contact-main py-5">
         <div class="container" style="max-width: 800px;">
-            
-            <div id="registrationSuccessAlert" class="alert alert-success d-none align-items-center mb-4" role="alert">
+
+       
+            <div
+                id="registrationSuccessAlert"
+                class="alert alert-success d-none align-items-center mb-4"
+                role="alert"
+            >
                 <div>
-                    <strong>Registration successful!</strong> Welcome to Bruliki. Your details have been auto-filled below. Please complete your order request.
+                    <strong>Registration successful!</strong>
+                    Welcome to Bruliki. Your details have been auto-filled
+                    below. Please complete your order request.
                 </div>
             </div>
 
             <div class="row g-4">
-                
+
+        
                 <div class="col-12">
                     <section class="form-section p-4 border rounded shadow-sm bg-white">
-                        <h1 class="mb-2 text-center">Place an Order / Contact Us</h1>
-                        <p id="demo-note" class="text-center text-muted mb-4">Demo only. Information is not stored.</p>
-                        
-                        <form action="demo-result.html" method="GET" class="needs-validation" novalidate aria-describedby="demo-note">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Your Name:</label>
-                                <input type="text" class="form-control" id="username" name="username" required minlength="2" autocomplete="name">
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">Please enter your name (minimum 2 characters).</div>
+
+                        <h1 class="mb-2 text-center">
+                            Place an Order / Contact Us
+                        </h1>
+
+                        <p
+                            id="demo-note"
+                            class="text-center text-muted mb-4"
+                        >
+                            Demo only. Information is not stored.
+                        </p>
+
+                        <form
+                            id="contactForm"
+                            class="needs-validation"
+                            novalidate
+                            aria-describedby="demo-note"
+                        >
+
+                            <div class="row g-3">
+
+                                <!-- Name -->
+                                <div class="col-12">
+                                    <label for="username" class="form-label">
+                                        Your Name: *
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="username"
+                                        name="username"
+                                        required
+                                        minlength="2"
+                                        autocomplete="name"
+                                        aria-describedby="name-feedback"
+                                    >
+
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+
+                                    <div
+                                        id="name-feedback"
+                                        class="invalid-feedback"
+                                    >
+                                        Please enter your name
+                                        (minimum 2 characters).
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-12">
+                                    <label for="email" class="form-label">
+                                        Email Address: *
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        autocomplete="email"
+                                        aria-describedby="email-feedback"
+                                    >
+
+                                    <div class="valid-feedback">
+                                        Valid email!
+                                    </div>
+
+                                    <div
+                                        id="email-feedback"
+                                        class="invalid-feedback"
+                                    >
+                                        Please provide a valid email address.
+                                    </div>
+                                </div>
+
+                                <!-- Message -->
+                                <div class="col-12">
+                                    <label for="comment" class="form-label">
+                                        Your Message / Order Details: *
+                                    </label>
+
+                                    <textarea
+                                        class="form-control"
+                                        id="comment"
+                                        name="comment"
+                                        rows="5"
+                                        required
+                                        minlength="10"
+                                        maxlength="500"
+                                        placeholder="Specify item name and your order details..."
+                                        aria-describedby="message-help message-feedback"
+                                    ></textarea>
+
+                                    <div id="message-help" class="form-text">
+                                        Enter between 10 and 500 characters.
+                                    </div>
+
+                                    <div class="valid-feedback">
+                                        Message looks great!
+                                    </div>
+
+                                    <div
+                                        id="message-feedback"
+                                        class="invalid-feedback"
+                                    >
+                                        Message must be between 10 and
+                                        500 characters.
+                                    </div>
+                                </div>
+
                             </div>
 
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address:</label>
-                                <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
-                                <div class="valid-feedback">Valid email!</div>
-                                <div class="invalid-feedback">Please provide a valid email address.</div>
-                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100 mt-3"
+                            >
+                                Send Order Request
+                            </button>
 
-                            <div class="mb-3">
-                                <label for="comment" class="form-label">Your Message / Order Details:</label>
-                                <textarea class="form-control" id="comment" name="comment" rows="5" required minlength="10" maxlength="500" placeholder="Specify item name and your order details..."></textarea>
-                                <div class="valid-feedback">Message looks great!</div>
-                                <div class="invalid-feedback">Message must be between 10 and 500 characters.</div>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary w-100">Send Order Request</button>
                         </form>
                     </section>
                 </div>
 
+                <!-- FAQ -->
                 <div class="col-12 mt-4">
                     <section class="faq-section p-4 border rounded bg-white">
-                        <h2 class="mb-4 text-center">Frequently Asked Questions</h2>
-                        
+
+                        <h2 class="mb-4 text-center">
+                            Frequently Asked Questions
+                        </h2>
+
                         <details class="faq-item mb-2 p-2 border-bottom">
-                            <summary class="fw-semibold">How can I place an order?</summary>
-                            <p class="mt-2 text-muted">You can pre-order any item through our catalog by filling out this form with product details.</p>
+                            <summary class="fw-semibold">
+                                How can I place an order?
+                            </summary>
+
+                            <p class="mt-2 text-muted">
+                                You can pre-order any item through our catalog
+                                by filling out this form with product details.
+                            </p>
                         </details>
 
                         <details class="faq-item mb-2 p-2 border-bottom">
-                            <summary class="fw-semibold">What is the delivery time?</summary>
-                            <p class="mt-2 text-muted">Delivery usually takes from 3 to 5 business days across Kazakhstan.</p>
+                            <summary class="fw-semibold">
+                                What is the delivery time?
+                            </summary>
+
+                            <p class="mt-2 text-muted">
+                                Delivery usually takes from 3 to 5 business
+                                days across Kazakhstan.
+                            </p>
                         </details>
 
                         <details class="faq-item mb-2 p-2">
-                            <summary class="fw-semibold">Are all accessories original?</summary>
-                            <p class="mt-2 text-muted">Yes, we guarantee high quality and authenticity for all luxury products.</p>
+                            <summary class="fw-semibold">
+                                Are all accessories original?
+                            </summary>
+
+                            <p class="mt-2 text-muted">
+                                Yes, we guarantee high quality and authenticity
+                                for all luxury products.
+                            </p>
                         </details>
+
                     </section>
                 </div>
 
@@ -103,29 +236,60 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+           
             const urlParams = new URLSearchParams(window.location.search);
-            
+
             if (urlParams.get('registered') === 'true') {
-                const alertBox = document.getElementById('registrationSuccessAlert');
+                const alertBox = document.getElementById(
+                    'registrationSuccessAlert'
+                );
+
                 alertBox.classList.remove('d-none');
                 alertBox.classList.add('d-flex');
 
-                if (urlParams.get('name')) {
-                    document.getElementById('username').value = urlParams.get('name');
+                const registeredName = urlParams.get('name');
+                const registeredEmail = urlParams.get('email');
+
+                if (registeredName) {
+                    document.getElementById('username').value =
+                        registeredName;
                 }
-                if (urlParams.get('email')) {
-                    document.getElementById('email').value = urlParams.get('email');
+
+                if (registeredEmail) {
+                    document.getElementById('email').value =
+                        registeredEmail;
                 }
             }
 
-            const form = document.querySelector('form.needs-validation');
+        
+            const form = document.getElementById('contactForm');
+
             form.addEventListener('submit', (event) => {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
+                event.preventDefault();
+
                 form.classList.add('was-validated');
+
+                if (!form.checkValidity()) {
+                    event.stopPropagation();
+                    return;
+                }
+
+              
+                alert(
+                    'Thank you! Your order request has been submitted successfully. ' +
+                    'This is a demo; your information has not been stored.'
+                );
+
+                form.reset();
+                form.classList.remove('was-validated');
             });
+
+         
+            form.addEventListener('reset', () => {
+                form.classList.remove('was-validated');
+            });
+
         });
     </script>
 </body>
