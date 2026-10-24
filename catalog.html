@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/team-interactions.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,44 +29,78 @@
         <p class="catalog-subtitle">
             Find your perfect statement piece from our curated selection.
         </p>
+        <section class="assignment-feature">
+    <h2>Welcome to Bruliki</h2>
+
+    <label for="visitorName">Enter your name:</label>
+    <input type="text" id="visitorName" placeholder="Your name">
+
+    <button type="button" id="welcomeButton">Say hello</button>
+
+    <p id="welcomeMessage" aria-live="polite">
+        Enter your name to get a welcome message.
+    </p>
+</section>
+
+<section class="assignment-feature">
+    <h2>Page Theme</h2>
+    <button type="button" id="themeButton">
+        Switch to dark theme
+    </button>
+</section>
+
+<section class="assignment-feature">
+    <h2>Search Products</h2>
+
+    <label for="productSearch">Search by product name:</label>
+    <input type="search" id="productSearch"
+           placeholder="Search accessories...">
+
+    <p id="searchCount" aria-live="polite">
+        Showing 6 products
+    </p>
+
+    <p id="noResults" hidden>No results found.</p>
+</section>
+
         
         <div class="grid-container">
-            <div class="card">
+            <div class="card product-card"">
                 <img src="images/glasses1.jpg" class="card-image">
                 <h3>Ray-Ban Classic</h3>
                 <p>Iconic design with premium UV protection lenses.</p>
                 <div class="price">$1800</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card">
+            <div class="card product-card">                
                 <img src="images/belt.jpg" class="card-image">
                 <h3>Croco-Belt</h3>
                 <p>Niche and unrepeatable belt of genuine crocodile leather </p>
                 <div class="price">$2200</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card">
+            <div class="card product-card">
                 <img src="images/watch.jpg" class="card-image">
                 <h3>Rainbow diamond Rolex</h3>
                 <p>Sunset rain time watch: June edition s'23</p>
                 <div class="price">$11195</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card">
+            <div class="card product-card">
                 <img src="images/hat.jpg" class="card-image">
                 <h3>Jacquemus hat</h3>
                 <p>Summerish brown cotton soft hat</p>
                 <div class="price">$1600</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card">
+            <div class="card product-card"">
                  <img src="images/chain.jpg" class="card-image">
                 <h3>Diamond Gloss Chain</h3>
                 <p>Elegant accessory crafted with premium materials.</p>
                 <div class="price">$750</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card">
+            <div class="card product-card"">
                 <img src="images/case.jpg" class="card-image">
                 <h3>Macbook Pro Leather Case</h3>
                 <p>Protective luxury case to keep your laptop safe.</p>
@@ -73,6 +108,58 @@
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
         </div>
+        
+<section class="assignment-feature">
+    <h2>My Favourite Accessories</h2>
+
+    <form id="favoriteForm">
+        <label for="favoriteInput">Accessory name:</label>
+        <input type="text" id="favoriteInput"
+               placeholder="Enter an accessory">
+
+        <button type="submit">Add to favourites</button>
+    </form>
+
+    <p id="favoriteError" aria-live="polite"></p>
+    <p id="favoriteCount">Items: 0</p>
+
+    <ul id="favoriteList"></ul>
+</section>
+
+<section class="assignment-feature">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question"
+                aria-expanded="false" aria-controls="faq1">
+            How can I place an order?
+        </button>
+        <p id="faq1" hidden>
+            Choose a product and click Pre-order to contact us.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question"
+                aria-expanded="false" aria-controls="faq2">
+            Can I ask about a product?
+        </button>
+        <p id="faq2" hidden>
+            Yes, you can send us a message through the Contact page.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question"
+                aria-expanded="false" aria-controls="faq3">
+            Is this a real online store?
+        </button>
+        <p id="faq3" hidden>
+            This is a student project. Orders are not processed.
+        </p>
+    </div>
+</section>
+
     </main>
     <footer>
         <p>2026 Bruliki Luxury Accessories.</p>
