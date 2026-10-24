@@ -721,3 +721,101 @@ nav a:focus,
     color: #615B55;
     line-height: 1.5;
 }
+
+/* Assignment #5: new interactive sections */
+
+.assignment-feature {
+    margin: 30px 0;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #ddd5c8;
+    border-radius: 12px;
+}
+
+.assignment-feature h2 {
+    margin-bottom: 15px;
+}
+
+.assignment-feature label {
+    display: block;
+    margin: 10px 0;
+}
+
+.assignment-feature input {
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.assignment-feature button {
+    padding: 10px 16px;
+    margin: 5px;
+    border: 0;
+    border-radius: 6px;
+    background: #b39a68;
+    color: white;
+    cursor: pointer;
+}
+
+.assignment-feature button:hover {
+    opacity: 0.85;
+}
+
+.assignment-feature p {
+    margin-top: 12px;
+}
+
+.faq-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd5c8;
+}
+
+#favoriteList li {
+    margin: 10px 0;
+}
+
+.product-card[hidden] {
+    display: none !important;
+}
+
+/* Dark theme */
+body.dark-theme {
+    background: #202720;
+    color: #f3ebdd;
+}
+
+body.dark-theme main,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p {
+    color: #f3ebdd;
+}
+
+body.dark-theme .assignment-feature,
+body.dark-theme .card {
+    background: #303a32;
+    color: #f3ebdd;
+    border-color: #566157;
+}
+
+body.dark-theme .assignment-feature input {
+    background: #202720;
+    color: white;
+    border-color: #68766b;
+}
+
+body.dark-theme .faq-item {
+    border-color: #566157;
+}
+
+@media (max-width: 600px) {
+    .assignment-feature {
+        padding: 16px;
+    }
+
+    .assignment-feature input {
+        width: 100%;
+    }
+}
