@@ -722,100 +722,132 @@ nav a:focus,
     line-height: 1.5;
 }
 
-/* Assignment #5: new interactive sections */
-
 .assignment-feature {
-    margin: 30px 0;
-    padding: 25px;
-    background: #ffffff;
-    border: 1px solid #ddd5c8;
+    margin: 55px auto;
+    padding: 28px 32px;
+    max-width: 850px;
     border-radius: 12px;
 }
 
 .assignment-feature h2 {
-    margin-bottom: 15px;
-}
-
-.assignment-feature label {
-    display: block;
-    margin: 10px 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #28352D;
+    margin-bottom: 20px;
 }
 
 .assignment-feature input {
+    font-family: inherit;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.welcome-panel {
+    text-align: center;
+    background: #ffffff;
+    border-top: 3px solid #B39A68;
+}
+
+.welcome-panel label {
+    text-align: left;
+}
+
+.theme-panel {
+    text-align: center;
+    padding: 15px;
+    background: transparent;
+}
+
+.search-panel {
+    background: #e9dfce;
+    text-align: center;
+}
+
+.search-panel input {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.favorites-panel {
+    background: #ffffff;
+    border: 1px solid #e4dccd;
+}
+
+.favorites-panel form {
     max-width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-.assignment-feature button {
-    padding: 10px 16px;
-    margin: 5px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
     border: 0;
-    border-radius: 6px;
-    background: #b39a68;
-    color: white;
-    cursor: pointer;
+    box-shadow: none;
 }
 
-.assignment-feature button:hover {
-    opacity: 0.85;
-}
-
-.assignment-feature p {
-    margin-top: 12px;
-}
-
-.faq-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd5c8;
+#favoriteList {
+    padding: 0;
+    list-style: none;
 }
 
 #favoriteList li {
-    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-top: 10px;
+    background: #F3EBDD;
+    border-radius: 8px;
 }
 
-.product-card[hidden] {
+.faq-panel {
+    background: transparent;
+    border-top: 1px solid #B39A68;
+}
+
+.faq-panel .faq-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #ded5c7;
+}
+
+.faq-panel .faq-question {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    color: #28352D;
+    font: inherit;
+    cursor: pointer;
+}
+
+.faq-panel .faq-item p {
+    text-align: left;
+}
+
+.product-card[hidden],
+.assignment-feature [hidden] {
     display: none !important;
 }
 
-/* Dark theme */
-body.dark-theme {
+body.dark-theme .assignment-feature {
+    background-color: #303a32;
+    color: #F3EBDD;
+}
+
+body.dark-theme .assignment-feature h2,
+body.dark-theme .faq-question {
+    color: #F3EBDD;
+}
+
+body.dark-theme .favorites-panel #favoriteList li {
     background: #202720;
-    color: #f3ebdd;
-}
-
-body.dark-theme main,
-body.dark-theme h1,
-body.dark-theme h2,
-body.dark-theme h3,
-body.dark-theme p {
-    color: #f3ebdd;
-}
-
-body.dark-theme .assignment-feature,
-body.dark-theme .card {
-    background: #303a32;
-    color: #f3ebdd;
-    border-color: #566157;
-}
-
-body.dark-theme .assignment-feature input {
-    background: #202720;
-    color: white;
-    border-color: #68766b;
-}
-
-body.dark-theme .faq-item {
-    border-color: #566157;
+    color: #F3EBDD;
 }
 
 @media (max-width: 600px) {
     .assignment-feature {
-        padding: 16px;
+        margin: 35px auto;
+        padding: 20px;
     }
 
-    .assignment-feature input {
-        width: 100%;
+    #favoriteList li {
+        align-items: flex-start;
     }
 }
