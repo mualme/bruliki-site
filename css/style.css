@@ -928,43 +928,108 @@ body.dark-theme .assignment-feature button:hover {
     }
 }
 
-/* Search bar layout */
 .search-panel {
     max-width: 900px;
-    margin: 35px auto 65px;
-    padding: 24px 30px;
-    text-align: left;
-    background-color: #E9DFCE;
+    margin: 35px auto 55px;
+    padding: 25px 32px;
+    background: #E9DFCE;
     border: 1px solid #D8C9AE;
     border-radius: 12px;
+    text-align: left;
 }
 
 .search-panel h2 {
     text-align: left;
-    margin-bottom: 14px;
 }
 
 .search-panel input {
-    max-width: none;
     width: 100%;
-    min-height: 50px;
+    max-width: none;
+    box-sizing: border-box;
     border-radius: 25px;
-    padding: 14px 20px;
-    font-size: 16px;
-}
-
-.search-panel label {
-    margin-bottom: 10px;
 }
 
 .search-panel #searchCount {
     text-align: right;
-    font-size: 13px;
+    font-size: 14px;
+}
+
+.welcome-panel {
+    margin-top: 45px;
+    padding: 28px 32px;
+}
+
+.assignment-feature button {
+    font-family: inherit;
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 11px 20px;
+    cursor: pointer;
+}
+
+body.dark-theme .search-panel {
+    background: #303A32;
+    border-color: #566157;
+}
+
+body.dark-theme .search-panel h2,
+body.dark-theme .search-panel label,
+body.dark-theme .search-panel p {
+    color: #F3EBDD;
+}
+
+body.dark-theme .search-panel input {
+    background: #202720;
+    color: #F3EBDD;
+    border-color: #68766B;
+}
+
+body.dark-theme .search-panel input::placeholder {
+    color: #C5CBBF;
 }
 
 @media (max-width: 600px) {
-    .search-panel {
-        margin: 25px auto 45px;
-        padding: 20px 16px;
+    .search-panel,
+    .welcome-panel {
+        padding: 20px;
+        margin-top: 30px;
     }
+}
+
+.faq-panel .faq-item {
+    background: transparent;
+}
+
+.faq-panel .faq-question {
+    background: #ffffff;
+    color: #28352D;
+    padding: 14px 16px;
+    border: 1px solid #e4dccd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+body.dark-theme .faq-panel .faq-item {
+    background: transparent;
+}
+
+body.dark-theme .faq-panel .faq-question {
+    background: #202720;
+    color: #F3EBDD;
+    border: 1px solid #566157;
+}
+
+body.dark-theme .faq-panel .faq-question:hover {
+    background: #3a473d;
+    color: #ffffff;
+}
+
+.faq-panel .faq-item p {
+    padding: 8px 16px;
+    line-height: 1.6;
+}
+
+body.dark-theme .faq-panel .faq-item p {
+    color: #F3EBDD;
 }
