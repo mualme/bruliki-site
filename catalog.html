@@ -31,6 +31,14 @@
         </p>
         <section class="assignment-feature welcome-panel">    
             <h2>Welcome to Bruliki</h2>
+    <section class="assignment-feature search-panel">
+        <h2>Search Products</h2>
+        <label for="productSearch">Search by product name:</label>
+        <input type="search" id="productSearch"
+            placeholder="Search accessories...">
+        <p id="searchCount" aria-live="polite">Showing 6 products</p>
+        <p id="noResults" hidden>>No results found.></p>
+    </section>
 
     <label for="visitorName">Enter your name:</label>
     <input type="text" id="visitorName" placeholder="Your name">
@@ -48,22 +56,6 @@
         Switch to dark theme
     </button>
 </section>
-
-<section class="assignment-feature search-panel">
-    <h2>Search Products</h2>
-
-    <label for="productSearch">Search by product name:</label>
-    <input type="search" id="productSearch"
-           placeholder="Search accessories...">
-
-    <p id="searchCount" aria-live="polite">
-        Showing 6 products
-    </p>
-
-    <p id="noResults" hidden>No results found.</p>
-</section>
-
-        
         <div class="grid-container">
             <div class="card product-card"">
                 <img src="images/glasses1.jpg" class="card-image">
