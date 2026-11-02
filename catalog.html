@@ -83,28 +83,28 @@
                 <div class="price">$2200</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card product-card">
+            <div class="card product-card" data-category="watches">
                 <img src="images/watch.jpg" class="card-image">
                 <h3>Rainbow diamond Rolex</h3>
                 <p>Sunset rain time watch: June edition s'23</p>
                 <div class="price">$11195</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card product-card">
+            <div class="card product-card" data-category="hats">
                 <img src="images/hat.jpg" class="card-image">
                 <h3>Jacquemus hat</h3>
                 <p>Summerish brown cotton soft hat</p>
                 <div class="price">$1600</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card product-card"">
+            <div class="card product-card"data-category="chains">
                  <img src="images/chain.jpg" class="card-image">
                 <h3>Diamond Gloss Chain</h3>
                 <p>Elegant accessory crafted with premium materials.</p>
                 <div class="price">$750</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card product-card"">
+            <div class="card product-card" data-category="cases">
                 <img src="images/case.jpg" class="card-image">
                 <h3>Macbook Pro Leather Case</h3>
                 <p>Protective luxury case to keep your laptop safe.</p>
@@ -126,7 +126,9 @@
 
     <p id="favoriteError" aria-live="polite"></p>
     <p id="favoriteCount">Items: 0</p>
-
+    <p id="favoriteEmpty">
+    Your favourites list is empty. Add your first accessory!
+    </p>
     <ul id="favoriteList"></ul>
 </section>
 
@@ -138,7 +140,7 @@
                 aria-expanded="false" aria-controls="faq1">
             How can I place an order?
         </button>
-        <p id="faq1" hidden>
+        <p id="faq1" class="faq-answer">            
             Choose a product and click Pre-order to contact us.
         </p>
     </div>
@@ -148,7 +150,7 @@
                 aria-expanded="false" aria-controls="faq2">
             Can I ask about a product?
         </button>
-        <p id="faq2" hidden>
+        <p id="faq2" class="faq-answer">
             Yes, you can send us a message through the Contact page.
         </p>
     </div>
@@ -158,7 +160,7 @@
                 aria-expanded="false" aria-controls="faq3">
             Is this a real online store?
         </button>
-        <p id="faq3" hidden>
+        <p id="faq3" class="faq-answer">
             This is a student project. Orders are not processed.
         </p>
     </div>
