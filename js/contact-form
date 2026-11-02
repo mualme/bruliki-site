@@ -13,24 +13,22 @@ $(document).ready(function () {
         $("#email").val(params.get("email") || "");
     }
 
-
     $("#contactForm").on("submit", function (event) {
 
         event.preventDefault();
+        event.stopPropagation();
 
-        // Get values from inputs
         let name = $("#username").val().trim();
         let email = $("#email").val().trim();
         let message = $("#comment").val().trim();
 
         let isValid = true;
 
-
         if (name.length < 2) {
 
             $("#username")
-                .addClass("is-invalid")
-                .removeClass("is-valid");
+                .removeClass("is-valid")
+                .addClass("is-invalid");
 
             $("#name-feedback").text(
                 "Please enter your name (minimum 2 characters)."
@@ -45,14 +43,13 @@ $(document).ready(function () {
                 .addClass("is-valid");
         }
 
-
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
 
             $("#email")
-                .addClass("is-invalid")
-                .removeClass("is-valid");
+                .removeClass("is-valid")
+                .addClass("is-invalid");
 
             $("#email-feedback").text(
                 "Please provide a valid email address."
@@ -67,12 +64,11 @@ $(document).ready(function () {
                 .addClass("is-valid");
         }
 
-
         if (message.length < 10 || message.length > 500) {
 
             $("#comment")
-                .addClass("is-invalid")
-                .removeClass("is-valid");
+                .removeClass("is-valid")
+                .addClass("is-invalid");
 
             $("#message-feedback").text(
                 "Message must be between 10 and 500 characters."
@@ -87,13 +83,15 @@ $(document).ready(function () {
                 .addClass("is-valid");
         }
 
-
         if (isValid) {
 
             $("#contactFeedback")
                 .removeClass("text-danger")
                 .addClass("text-success")
-                .text("Your form has been validated successfully! This is a demo. No information was stored.");
+                .text(
+                    "Your form has been validated successfully! " +
+                    "This is a demo. No information was stored."
+                );
 
         } else {
 
@@ -105,11 +103,14 @@ $(document).ready(function () {
 
     });
 
+
     $("#contactForm").on("input", "input, textarea", function () {
 
         $(this).removeClass("is-invalid is-valid");
 
+        $("#contactFeedback")
+            .removeClass("text-danger text-success")
+            .text("");
     });
 
 });
-
