@@ -1,112 +1,134 @@
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
 
-    const nameInput = document.getElementById('visitorName');
-    const welcomeButton = document.getElementById('welcomeButton');
-    const welcomeMessage = document.getElementById('welcomeMessage');
+    $("#welcomeButton").click(function () {
+        let name = $("#visitorName").val().trim();
 
-    welcomeButton.addEventListener('click', function () {
-        const name = nameInput.value.trim();
-
-        if (name === '') {
-            welcomeMessage.textContent = 'Please enter your name.';
+        if (name === "") {
+            $("#welcomeMessage")
+                .text("Please enter your name.")
+                .addClass("error-message");
         } else {
-            welcomeMessage.textContent = 'Welcome to Bruliki, ' + name + '!';
+            $("#welcomeMessage")
+                .text("Welcome to Bruliki, " + name + "!")
+                .removeClass("error-message");
         }
     });
 
-    const themeButton = document.getElementById('themeButton');
+    $("#themeButton").click(function () {
+        $("body").toggleClass("dark-theme");
 
-    themeButton.addEventListener('click', function () {
-        document.body.classList.toggle('dark-theme');
-
-        if (document.body.classList.contains('dark-theme')) {
-            themeButton.textContent = 'Switch to light theme';
+        if ($("body").hasClass("dark-theme")) {
+            $(this).text("Switch to light theme");
         } else {
-            themeButton.textContent = 'Switch to dark theme';
+            $(this).text("Switch to dark theme");
         }
     });
 
-    const faqButtons = document.querySelectorAll('.faq-question');
+    $(".faq-answer").hide();
 
-    faqButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            const answerId = button.getAttribute('aria-controls');
-            const answer = document.getElementById(answerId);
-            const isOpen = button.getAttribute('aria-expanded') === 'true';
+    $(".faq-question").click(function () {
+        let answerId = $(this).attr("aria-controls");
+        let answer = $("#" + answerId);
 
-            answer.hidden = isOpen;
-            button.setAttribute('aria-expanded', String(!isOpen));
-        });
+        if (answer.is(":visible")) {
+            answer.stop(true, true).slideUp(400);
+            $(this).attr("aria-expanded", "false");
+        } else {
+            answer.stop(true, true).slideDown(400);
+            $(this).attr("aria-expanded", "true");
+        }
     });
 
-    // Task 3: Search products
-    const searchInput = document.getElementById('productSearch');
-    const productCards = document.querySelectorAll('.product-card');
-    const searchCount = document.getElementById('searchCount');
-    const noResults = document.getElementById('noResults');
+    $("#themeButton").click(function () {
+        $("#themeStatus").stop(true, true).fadeIn(300);
 
-    searchInput.addEventListener('input', function () {
-        const searchText = searchInput.value.trim().toLowerCase();
+        setTimeout(function () {
+            $("#themeStatus").fadeOut(400);
+        }, 1500);
+    });
+
+    function filterProducts() {
+        let searchText = $("#productSearch").val().toLowerCase().trim();
+        let selectedCategory = $("#categoryFilter").val();
         let count = 0;
 
-        productCards.forEach(function (card) {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const matches = title.includes(searchText);
+        $(".product-card").each(function () {
+            let productText = $(this).text().toLowerCase();
+            let category = $(this).attr("data-category");
 
-            card.hidden = !matches;
+            let matchesSearch = productText.includes(searchText);
+            let matchesCategory =
+                selectedCategory === "all" ||
+                category === selectedCategory;
 
-            if (matches) {
+            if (matchesSearch && matchesCategory) {
+                $(this).show();
                 count++;
+            } else {
+                $(this).hide();
             }
         });
 
-        searchCount.textContent = 'Showing ' + count + ' products';
-        noResults.hidden = count !== 0;
-    });
+        $("#searchCount").text("Showing " + count + " products");
 
-    const favoriteForm = document.getElementById('favoriteForm');
-    const favoriteInput = document.getElementById('favoriteInput');
-    const favoriteList = document.getElementById('favoriteList');
-    const favoriteCount = document.getElementById('favoriteCount');
-    const favoriteError = document.getElementById('favoriteError');
-
-    function updateFavoriteCount() {
-        favoriteCount.textContent =
-            'Items: ' + favoriteList.querySelectorAll('li').length;
+        if (count === 0) {
+            $("#noResults").fadeIn(200);
+        } else {
+            $("#noResults").hide();
+        }
     }
 
-    favoriteForm.addEventListener('submit', function (event) {
+    $("#productSearch").on("input", filterProducts);
+    $("#categoryFilter").on("change", filterProducts);
+
+    function updateFavoriteCount() {
+        let count = $("#favoriteList li").length;
+
+        $("#favoriteCount").text("Items: " + count);
+
+        if (count === 0) {
+            $("#favoriteEmpty").show();
+        } else {
+            $("#favoriteEmpty").hide();
+        }
+    }
+
+    $("#favoriteForm").on("submit", function (event) {
         event.preventDefault();
 
-        const itemName = favoriteInput.value.trim();
+        let itemName = $("#favoriteInput").val().trim();
 
-        if (itemName === '') {
-            favoriteError.textContent = 'Please enter an accessory name.';
+        if (itemName === "") {
+            $("#favoriteError").text("Please enter an accessory name.");
             return;
         }
 
-        favoriteError.textContent = '';
+        $("#favoriteError").text("");
 
-        const item = document.createElement('li');
-        const itemText = document.createElement('span');
-        const removeButton = document.createElement('button');
+        let newItem = $("<li>");
+        let itemText = $("<span>").text(itemName);
 
-        itemText.textContent = itemName;
-        removeButton.textContent = 'Remove';
-        removeButton.type = 'button';
+        let removeButton = $("<button>")
+            .attr("type", "button")
+            .addClass("remove-favorite")
+            .text("Remove");
 
-        removeButton.addEventListener('click', function () {
-            item.remove();
-            updateFavoriteCount();
-        });
+        newItem.append(itemText, " ", removeButton);
 
-        item.append(itemText, ' ', removeButton);
-        favoriteList.append(item);
+        $("#favoriteList").append(newItem);
 
-        favoriteInput.value = '';
-        favoriteInput.focus();
+        $("#favoriteInput").val("");
+
         updateFavoriteCount();
     });
+
+    $("#favoriteList").on("click", ".remove-favorite", function () {
+        $(this).closest("li").remove();
+
+        updateFavoriteCount();
+    });
+
+    updateFavoriteCount();
 
 });
