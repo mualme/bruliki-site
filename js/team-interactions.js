@@ -150,6 +150,13 @@ $("#favoriteSuccess")
         $(this).closest("li").remove();
         updateFavoriteCount();
     });
+    $("#favoriteSuccess")
+    .text("Item removed from favourites!")
+    .stop(true, true)
+    .fadeIn(300)
+    .delay(1500)
+    .fadeOut(300);
+    
 
     updateFavoriteCount();
 
