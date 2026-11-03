@@ -1216,3 +1216,50 @@ body.dark-theme .favorite-success {
     background-color: #F3EBDD;
     border-left-color: #B39A68;
 }
+
+body.dark-theme .hero {
+    background-color: #FFFFFF;
+}
+
+body.dark-theme .hero .hero-label,
+body.dark-theme .hero .hero-text,
+body.dark-theme .hero h1 {
+    color: #174735 !important;
+}
+
+body.dark-theme .hero h1 span {
+    color: #772B2B !important;
+}
+
+body.dark-theme .benefit,
+body.dark-theme .benefit h3,
+body.dark-theme .benefit p {
+    background-color: #FFFFFF;
+    color: #174735 !important;
+}
+
+body.dark-theme .benefit-number {
+    color: #772B2B !important;
+}
+
+body.dark-theme .featured,
+body.dark-theme .featured-card,
+body.dark-theme .featured-info {
+    background-color: #FFFFFF;
+    color: #174735 !important;
+}
+
+body.dark-theme .featured h2,
+body.dark-theme .featured h3,
+body.dark-theme .featured p,
+body.dark-theme .featured .section-label,
+body.dark-theme .featured .view-link,
+body.dark-theme .featured .featured-price {
+    color: #174735 !important;
+}
+body.dark-theme .catalog-heading,
+body.dark-theme .catalog-heading h1,
+body.dark-theme .catalog-heading p,
+body.dark-theme .catalog-subtitle {
+    color: #F3E6C5 !important;
+}
