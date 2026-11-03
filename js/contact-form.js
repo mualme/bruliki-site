@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    // Fill contact form after successful registration
+  
     const params = new URLSearchParams(window.location.search);
 
     if (params.get("registered") === "true") {
