@@ -1,21 +1,34 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Bruliki | Luxury Accessories</title>
 
     <link rel="icon" href="star.jpg">
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
+
     <header>
-        <div class="logo">Bruliki</div>
+        <div class="logo">
+            <a href="index.html">Bruliki</a>
+
+            <button
+                type="button"
+                id="themeButton"
+                class="theme-toggle"
+                aria-label="Switch to dark theme"
+                title="Switch theme"
+            >
+                <span id="themeIcon" aria-hidden="true">☾</span>
+            </button>
+        </div>
 
         <nav>
             <ul>
@@ -23,14 +36,14 @@
                 <li><a href="catalog.html">Catalog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="register.html">Register</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main>
 
-       
+    
         <section class="hero">
 
             <div class="hero-content">
@@ -55,13 +68,38 @@
 
             </div>
 
-
             <div class="hero-image">
-
-                <img src="images/watches.jpg"
-                     alt="Luxury watches from the Bruliki collection">
-
+                <img
+                    src="images/watches.jpg"
+                    alt="Luxury watches from the Bruliki collection"
+                >
             </div>
+
+        </section>
+        
+        <section class="assignment-feature welcome-panel">
+
+            <h2>Welcome to Bruliki</h2>
+
+            <p>
+                Discover our exclusive collection of luxury accessories.
+            </p>
+
+            <label for="visitorName">Enter your name:</label>
+
+            <input
+                type="text"
+                id="visitorName"
+                placeholder="Your name"
+            >
+
+            <button type="button" id="welcomeButton">
+                Say hello
+            </button>
+
+            <p id="welcomeMessage" aria-live="polite">
+                Enter your name to get a welcome message.
+            </p>
 
         </section>
 
@@ -78,11 +116,9 @@
                 </p>
             </div>
 
-
             <div class="benefits">
 
                 <article class="benefit">
-
                     <div class="benefit-number">01</div>
 
                     <h3>Quality</h3>
@@ -91,12 +127,9 @@
                         We carefully select products with attention
                         to materials, design and reliability.
                     </p>
-
                 </article>
 
-
                 <article class="benefit">
-
                     <div class="benefit-number">02</div>
 
                     <h3>Timeless Style</h3>
@@ -105,12 +138,9 @@
                         Our collection combines modern details
                         with designs that never go out of style.
                     </p>
-
                 </article>
 
-
                 <article class="benefit">
-
                     <div class="benefit-number">03</div>
 
                     <h3>Attention to Detail</h3>
@@ -119,13 +149,11 @@
                         Every accessory is chosen to help you
                         express your individual personality.
                     </p>
-
                 </article>
 
             </div>
 
         </section>
-
 
         <section class="featured">
 
@@ -133,7 +161,6 @@
 
                 <div>
                     <p class="section-label">OUR COLLECTION</p>
-
                     <h2>Featured Pieces</h2>
                 </div>
 
@@ -143,14 +170,15 @@
 
             </div>
 
-
             <div class="featured-grid">
 
                 <article class="featured-card">
 
                     <div class="featured-image">
-                        <img src="images/glasses1.jpg"
-                             alt="Ray-Ban Classic sunglasses">
+                        <img
+                            src="images/glasses1.jpg"
+                            alt="Ray-Ban Classic sunglasses"
+                        >
                     </div>
 
                     <div class="featured-info">
@@ -165,12 +193,13 @@
 
                 </article>
 
-
                 <article class="featured-card">
 
                     <div class="featured-image">
-                        <img src="images/watch.jpg"
-                             alt="Rainbow diamond Rolex watch">
+                        <img
+                            src="images/watch.jpg"
+                            alt="Rainbow diamond Rolex watch"
+                        >
                     </div>
 
                     <div class="featured-info">
@@ -185,12 +214,13 @@
 
                 </article>
 
-
                 <article class="featured-card">
 
                     <div class="featured-image">
-                        <img src="images/chain.jpg"
-                             alt="Diamond Gloss Chain">
+                        <img
+                            src="images/chain.jpg"
+                            alt="Diamond Gloss Chain"
+                        >
                     </div>
 
                     <div class="featured-info">
@@ -212,7 +242,6 @@
         <section class="home-cta">
 
             <div>
-
                 <p class="section-label">YOUR STYLE STARTS HERE</p>
 
                 <h2>Find something made for you.</h2>
@@ -221,20 +250,21 @@
                     Explore our collection and discover your next
                     signature accessory.
                 </p>
-
             </div>
 
-            <a href="catalog.html" class="btn"> See </a>
+            <a href="catalog.html" class="btn">See Collection</a>
 
         </section>
 
     </main>
 
-
     <footer>
         <p>2026 Bruliki Luxury Accessories.</p>
     </footer>
 
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/team-interactions.js"></script>
 
+</body>
 </html>
+
