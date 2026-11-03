@@ -1,176 +1,254 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Catalog - Bruliki</title>
 
-    <link rel="icon" type="star/jpg" href="star.jpg">
-
+    <link rel="icon" type="image/jpeg" href="star.jpg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
     <header>
         <div class="logo">Bruliki</div>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="catalog.html" aria-current="page">Catalog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="register.html">Register</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <h1>Our Exclusive Collection</h1>
+
         <p class="catalog-subtitle">
             Find your perfect statement piece from our curated selection.
         </p>
-    <section class="assignment-feature search-panel">
-        <h2>Search Products</h2>
-        <label for="productSearch">Search by product name:</label>
-        <input type="search" id="productSearch"
+
+        <section class="assignment-feature search-panel">
+            <h2>Search Products</h2>
+
+            <label for="productSearch">Search by product name:</label>
+            <input
+                type="search"
+                id="productSearch"
+                placeholder="Search accessories..."
+            >
+
             <label for="categoryFilter">Filter by category:</label>
-        <select id="categoryFilter">
-            <option value="all">All Categories</option>
-            <option value="glasses">Sunglasses</option>
-            <option value="belts">Belts</option>
-            <option value="watches">Watches</option>
-            <option value="hats">Hats</option>
-            <option value="jewelry">Jewelry</option>
-            <option value="cases">Cases</option>
-        </select>
-            placeholder="Search accessories...">
-        <p id="searchCount" aria-live="polite">Showing 6 products</p>
-        <p id="noResults" hidden>No results found.</p>
-    </section>
-    <section class="assignment-feature welcome-panel">    
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="glasses">Sunglasses</option>
+                <option value="belts">Belts</option>
+                <option value="watches">Watches</option>
+                <option value="hats">Hats</option>
+                <option value="jewelry">Jewelry</option>
+                <option value="cases">Cases</option>
+            </select>
+
+            <p id="searchCount" aria-live="polite">Showing 6 products</p>
+            <p id="noResults" hidden>No results found.</p>
+        </section>
+
+  
+        <section class="assignment-feature welcome-panel">
             <h2>Welcome to Bruliki</h2>
 
-    <label for="visitorName">Enter your name:</label>
-    <input type="text" id="visitorName" placeholder="Your name">
+            <label for="visitorName">Enter your name:</label>
+            <input
+                type="text"
+                id="visitorName"
+                placeholder="Your name"
+            >
 
-    <button type="button" id="welcomeButton">Say hello</button>
+            <button type="button" id="welcomeButton">Say hello</button>
 
-    <p id="welcomeMessage" aria-live="polite">
-        Enter your name to get a welcome message.
-    </p>
-</section>
+            <p id="welcomeMessage" aria-live="polite">
+                Enter your name to get a welcome message.
+            </p>
+        </section>
 
-<section class="assignment-feature theme-panel">
-    <h2>Page Theme</h2>
-    <button type="button" id="themeButton">
-        Switch to dark theme
-    </button>
-    <p id="themeStatus" style="display: none;">
-    Theme changed successfully!
-    </p>
-</section>
+      
+        <section class="assignment-feature theme-panel">
+            <h2>Page Theme</h2>
+
+            <button type="button" id="themeButton">
+                Switch to dark theme
+            </button>
+
+            <p id="themeStatus" style="display: none;" aria-live="polite">
+                Theme changed successfully!
+            </p>
+        </section>
+
+       
         <div class="grid-container">
+
             <div class="card product-card" data-category="glasses">
-                <img src="images/glasses1.jpg" class="card-image">
+                <img
+                    src="images/glasses1.jpg"
+                    class="card-image"
+                    alt="Ray-Ban Classic sunglasses"
+                >
                 <h3>Ray-Ban Classic</h3>
                 <p>Iconic design with premium UV protection lenses.</p>
                 <div class="price">$1800</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card product-card" data-category="belts">                
-                <img src="images/belt.jpg" class="card-image">
+
+            <div class="card product-card" data-category="belts">
+                <img
+                    src="images/belt.jpg"
+                    class="card-image"
+                    alt="Croco-Belt"
+                >
                 <h3>Croco-Belt</h3>
-                <p>Niche and unrepeatable belt of genuine crocodile leather </p>
+                <p>Niche and unrepeatable belt of genuine crocodile leather.</p>
                 <div class="price">$2200</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
+
             <div class="card product-card" data-category="watches">
-                <img src="images/watch.jpg" class="card-image">
+                <img
+                    src="images/watch.jpg"
+                    class="card-image"
+                    alt="Rainbow diamond Rolex watch"
+                >
                 <h3>Rainbow diamond Rolex</h3>
                 <p>Sunset rain time watch: June edition s'23</p>
                 <div class="price">$11195</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
+
             <div class="card product-card" data-category="hats">
-                <img src="images/hat.jpg" class="card-image">
+                <img
+                    src="images/hat.jpg"
+                    class="card-image"
+                    alt="Jacquemus summer hat"
+                >
                 <h3>Jacquemus hat</h3>
                 <p>Summerish brown cotton soft hat</p>
                 <div class="price">$1600</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
-            <div class="card product-card"data-category="chains">
-                 <img src="images/chain.jpg" class="card-image">
+
+            <div class="card product-card" data-category="jewelry">
+                <img
+                    src="images/chain.jpg"
+                    class="card-image"
+                    alt="Diamond Gloss Chain"
+                >
                 <h3>Diamond Gloss Chain</h3>
                 <p>Elegant accessory crafted with premium materials.</p>
                 <div class="price">$750</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
+
             <div class="card product-card" data-category="cases">
-                <img src="images/case.jpg" class="card-image">
+                <img
+                    src="images/case.jpg"
+                    class="card-image"
+                    alt="Macbook Pro Leather Case"
+                >
                 <h3>Macbook Pro Leather Case</h3>
                 <p>Protective luxury case to keep your laptop safe.</p>
                 <div class="price">$620</div>
                 <a href="contact.html" class="btn">Pre-order</a>
             </div>
+
         </div>
-        
-<section class="assignment-feature favorites-panel">
-    <h2>My Favourite Accessories</h2>
 
-    <form id="favoriteForm">
-        <label for="favoriteInput">Accessory name:</label>
-        <input type="text" id="favoriteInput"
-               placeholder="Enter an accessory">
+    
+        <section class="assignment-feature favorites-panel">
+            <h2>My Favourite Accessories</h2>
 
-        <button type="submit">Add to favourites</button>
-    </form>
+            <form id="favoriteForm">
+                <label for="favoriteInput">Accessory name:</label>
 
-    <p id="favoriteError" aria-live="polite"></p>
-    <p id="favoriteCount">Items: 0</p>
-    <p id="favoriteEmpty">
-    Your favourites list is empty. Add your first accessory!
-    </p>
-    <ul id="favoriteList"></ul>
-</section>
+                <input
+                    type="text"
+                    id="favoriteInput"
+                    placeholder="Enter an accessory"
+                >
 
-<section class="assignment-feature faq-panel">
-    <h2>Frequently Asked Questions</h2>
+                <button type="submit">Add to favourites</button>
+            </form>
 
-    <div class="faq-item">
-        <button type="button" class="faq-question"
-                aria-expanded="false" aria-controls="faq1">
-            How can I place an order?
-        </button>
-        <p id="faq1" class="faq-answer">            
-            Choose a product and click Pre-order to contact us.
-        </p>
-    </div>
+            <p id="favoriteError" aria-live="polite"></p>
+            <p id="favoriteCount">Items: 0</p>
 
-    <div class="faq-item">
-        <button type="button" class="faq-question"
-                aria-expanded="false" aria-controls="faq2">
-            Can I ask about a product?
-        </button>
-        <p id="faq2" class="faq-answer">
-            Yes, you can send us a message through the Contact page.
-        </p>
-    </div>
+            <p id="favoriteEmpty">
+                Your favourites list is empty. Add your first accessory!
+            </p>
 
-    <div class="faq-item">
-        <button type="button" class="faq-question"
-                aria-expanded="false" aria-controls="faq3">
-            Is this a real online store?
-        </button>
-        <p id="faq3" class="faq-answer">
-            This is a student project. Orders are not processed.
-        </p>
-    </div>
-</section>
+            <ul id="favoriteList"></ul>
+        </section>
+
+        <section class="assignment-feature faq-panel">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button
+                    type="button"
+                    class="faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq1"
+                >
+                    How can I place an order?
+                </button>
+
+                <p id="faq1" class="faq-answer">
+                    Choose a product and click Pre-order to contact us.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <button
+                    type="button"
+                    class="faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq2"
+                >
+                    Can I ask about a product?
+                </button>
+
+                <p id="faq2" class="faq-answer">
+                    Yes, you can send us a message through the Contact page.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <button
+                    type="button"
+                    class="faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq3"
+                >
+                    Is this a real online store?
+                </button>
+
+                <p id="faq3" class="faq-answer">
+                    This is a student project. Orders are not processed.
+                </p>
+            </div>
+        </section>
 
     </main>
+
     <footer>
         <p>2026 Bruliki Luxury Accessories.</p>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/team-interactions.js"></script>
 </body>
-</html> 
+</html>
