@@ -1,8 +1,11 @@
 
+
 $(document).ready(function () {
 
-    $("#welcomeButton").click(function () {
-        let name = $("#visitorName").val().trim();
+    console.log("jQuery is ready!");
+
+    $("#welcomeButton").on("click", function () {
+        const name = $("#visitorName").val().trim();
 
         if (name === "") {
             $("#welcomeMessage")
@@ -10,70 +13,74 @@ $(document).ready(function () {
                 .addClass("error-message");
         } else {
             $("#welcomeMessage")
-                .text("Welcome to Bruliki, " + name + "!")
-                .removeClass("error-message");
+                .removeClass("error-message")
+                .text("Welcome to Bruliki, " + name + "!");
         }
     });
 
-    $("#themeButton").click(function () {
+    $("#themeButton").on("click", function () {
         $("body").toggleClass("dark-theme");
 
-        if ($("body").hasClass("dark-theme")) {
+        const isDark = $("body").hasClass("dark-theme");
+
+        if (isDark) {
             $(this).text("Switch to light theme");
         } else {
             $(this).text("Switch to dark theme");
         }
+
+        $("#themeStatus")
+            .stop(true, true)
+            .text("Theme changed successfully!")
+            .fadeIn(300)
+            .delay(1200)
+            .fadeOut(500);
     });
+
 
     $(".faq-answer").hide();
 
-    $(".faq-question").click(function () {
-        let answerId = $(this).attr("aria-controls");
-        let answer = $("#" + answerId);
+    $(".faq-question").on("click", function () {
+        const button = $(this);
+        const answerId = button.attr("aria-controls");
+        const answer = $("#" + answerId);
+        const isOpen = button.attr("aria-expanded") === "true";
 
-        if (answer.is(":visible")) {
-            answer.stop(true, true).slideUp(400);
-            $(this).attr("aria-expanded", "false");
-        } else {
-            answer.stop(true, true).slideDown(400);
-            $(this).attr("aria-expanded", "true");
-        }
+        answer.stop(true, true).slideToggle(300);
+
+        button.attr("aria-expanded", String(!isOpen));
     });
 
-    $("#themeButton").click(function () {
-        $("#themeStatus").stop(true, true).fadeIn(300);
-
-        setTimeout(function () {
-            $("#themeStatus").fadeOut(400);
-        }, 1500);
-    });
 
     function filterProducts() {
-        let searchText = $("#productSearch").val().toLowerCase().trim();
-        let selectedCategory = $("#categoryFilter").val();
+        const searchText = $("#productSearch").val().trim().toLowerCase();
+        const selectedCategory = $("#categoryFilter").val();
+
         let count = 0;
 
         $(".product-card").each(function () {
-            let productText = $(this).text().toLowerCase();
-            let category = $(this).attr("data-category");
+            const card = $(this);
+            const productName = card.find("h3").text().toLowerCase();
+            const productCategory = card.attr("data-category");
 
-            let matchesSearch = productText.includes(searchText);
-            let matchesCategory =
+            const matchesSearch = productName.includes(searchText);
+
+            const matchesCategory =
                 selectedCategory === "all" ||
-                category === selectedCategory;
+                productCategory === selectedCategory;
 
             if (matchesSearch && matchesCategory) {
-                $(this).show();
+                card.show();
                 count++;
             } else {
-                $(this).hide();
+                card.hide();
             }
         });
 
         $("#searchCount").text("Showing " + count + " products");
 
         if (count === 0) {
-            $("#noResults").fadeIn(200);
+            $("#noResults").show();
         } else {
             $("#noResults").hide();
         }
@@ -82,8 +89,10 @@ $(document).ready(function () {
     $("#productSearch").on("input", filterProducts);
     $("#categoryFilter").on("change", filterProducts);
 
-    function updateFavoriteCount() {
-        let count = $("#favoriteList li").length;
+
+    // TASK 4: Dynamic Favourite List
+    function updateFavoriteList() {
+        const count = $("#favoriteList li").length;
 
         $("#favoriteCount").text("Items: " + count);
 
@@ -97,7 +106,7 @@ $(document).ready(function () {
     $("#favoriteForm").on("submit", function (event) {
         event.preventDefault();
 
-        let itemName = $("#favoriteInput").val().trim();
+        const itemName = $("#favoriteInput").val().trim();
 
         if (itemName === "") {
             $("#favoriteError").text("Please enter an accessory name.");
@@ -106,10 +115,10 @@ $(document).ready(function () {
 
         $("#favoriteError").text("");
 
-        let newItem = $("<li>");
-        let itemText = $("<span>").text(itemName);
+        const newItem = $("<li></li>");
+        const itemText = $("<span></span>").text(itemName);
 
-        let removeButton = $("<button>")
+        const removeButton = $("<button></button>")
             .attr("type", "button")
             .addClass("remove-favorite")
             .text("Remove");
@@ -118,17 +127,17 @@ $(document).ready(function () {
 
         $("#favoriteList").append(newItem);
 
-        $("#favoriteInput").val("");
+        $("#favoriteInput").val("").focus();
 
-        updateFavoriteCount();
+        updateFavoriteList();
     });
 
     $("#favoriteList").on("click", ".remove-favorite", function () {
         $(this).closest("li").remove();
 
-        updateFavoriteCount();
+        updateFavoriteList();
     });
 
-    updateFavoriteCount();
+    updateFavoriteList();
 
 });
