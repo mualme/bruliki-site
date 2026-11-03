@@ -1,31 +1,28 @@
 
 $(document).ready(function () {
 
-    let params = new URLSearchParams(window.location.search);
+    // Fill contact form after successful registration
+    const params = new URLSearchParams(window.location.search);
 
     if (params.get("registered") === "true") {
-
-        $("#registrationSuccessAlert")
-            .removeClass("d-none")
-            .addClass("d-flex");
+        $("#registrationSuccessAlert").removeClass("d-none");
 
         $("#username").val(params.get("name") || "");
         $("#email").val(params.get("email") || "");
     }
 
+    // TASK 5: Contact Form Validation
     $("#contactForm").on("submit", function (event) {
-
         event.preventDefault();
-        event.stopPropagation();
 
-        let name = $("#username").val().trim();
-        let email = $("#email").val().trim();
-        let message = $("#comment").val().trim();
+        const name = $("#username").val().trim();
+        const email = $("#email").val().trim();
+        const message = $("#comment").val().trim();
 
         let isValid = true;
 
+        // Name validation
         if (name.length < 2) {
-
             $("#username")
                 .removeClass("is-valid")
                 .addClass("is-invalid");
@@ -35,18 +32,16 @@ $(document).ready(function () {
             );
 
             isValid = false;
-
         } else {
-
             $("#username")
                 .removeClass("is-invalid")
                 .addClass("is-valid");
         }
 
-        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
-
             $("#email")
                 .removeClass("is-valid")
                 .addClass("is-invalid");
@@ -56,16 +51,14 @@ $(document).ready(function () {
             );
 
             isValid = false;
-
         } else {
-
             $("#email")
                 .removeClass("is-invalid")
                 .addClass("is-valid");
         }
 
+        // Message validation
         if (message.length < 10 || message.length > 500) {
-
             $("#comment")
                 .removeClass("is-valid")
                 .addClass("is-invalid");
@@ -75,26 +68,22 @@ $(document).ready(function () {
             );
 
             isValid = false;
-
         } else {
-
             $("#comment")
                 .removeClass("is-invalid")
                 .addClass("is-valid");
         }
 
+        // Final feedback
         if (isValid) {
-
             $("#contactFeedback")
                 .removeClass("text-danger")
                 .addClass("text-success")
                 .text(
                     "Your form has been validated successfully! " +
-                    "This is a demo. No information was stored."
+                    "This is a demo. Your information was not sent or stored."
                 );
-
         } else {
-
             $("#contactFeedback")
                 .removeClass("text-success")
                 .addClass("text-danger")
@@ -103,13 +92,12 @@ $(document).ready(function () {
 
     });
 
-
+    // Clear the previous status when the user edits a field
     $("#contactForm").on("input", "input, textarea", function () {
-
         $(this).removeClass("is-invalid is-valid");
 
         $("#contactFeedback")
-            .removeClass("text-danger text-success")
+            .removeClass("text-success text-danger")
             .text("");
     });
 
