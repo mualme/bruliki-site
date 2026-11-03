@@ -1043,3 +1043,115 @@ body.dark-theme .faq-panel .faq-question:hover {
 body.dark-theme .faq-panel .faq-item p {
     color: #F3EBDD;
 }
+
+/* ===== Bruliki Assignment 6 ===== */
+
+/* Logo and theme icon */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
+    padding: 0;
+    border: 1px solid #b99b62;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+    background-color: rgba(185, 155, 98, 0.2);
+}
+
+/* Welcome block */
+.welcome-panel {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #222222;
+    border-top: 3px solid #b99b62;
+    border-radius: 12px;
+}
+
+.welcome-panel input {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 12px auto;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.welcome-panel button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #c0392b;
+}
+
+/* Dark theme */
+body.dark-theme {
+    background-color: #24211e;
+    color: #f5eee3;
+}
+
+body.dark-theme header,
+body.dark-theme footer {
+    background-color: #302b26;
+    color: #f5eee3;
+}
+
+body.dark-theme .card,
+body.dark-theme .welcome-panel,
+body.dark-theme .favorites-panel,
+body.dark-theme .faq-panel,
+body.dark-theme .form-section,
+body.dark-theme .faq-section {
+    background-color: #38312b;
+    color: #f5eee3;
+}
+
+body.dark-theme .search-panel {
+    background-color: #40372e;
+    color: #f5eee3;
+}
+
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+    background-color: #302b26;
+    color: #ffffff;
+    border-color: #80715e;
+}
+
+body.dark-theme a {
+    color: inherit;
+}
+
+body.dark-theme .theme-toggle {
+    border-color: #d6bd8b;
+    color: #f5eee3;
+}
+
