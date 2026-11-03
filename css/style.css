@@ -1044,9 +1044,6 @@ body.dark-theme .faq-panel .faq-item p {
     color: #F3EBDD;
 }
 
-/* ===== Bruliki Assignment 6 ===== */
-
-/* Logo and theme icon */
 .logo {
     display: flex;
     flex-direction: column;
@@ -1081,7 +1078,7 @@ body.dark-theme .faq-panel .faq-item p {
     background-color: rgba(185, 155, 98, 0.2);
 }
 
-/* Welcome block */
+
 .welcome-panel {
     max-width: 850px;
     margin: 35px auto;
@@ -1111,7 +1108,7 @@ body.dark-theme .faq-panel .faq-item p {
     color: #c0392b;
 }
 
-/* Dark theme */
+
 body.dark-theme {
     background-color: #24211e;
     color: #f5eee3;
@@ -1155,3 +1152,19 @@ body.dark-theme .theme-toggle {
     color: #f5eee3;
 }
 
+.favorite-success {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    color: #48361d;
+    background-color: #f5ead7;
+    border-left: 3px solid #b99b62;
+    border-radius: 5px;
+    text-align: center;
+}
+
+body.dark-theme .favorite-success {
+    color: #f5eee3;
+    background-color: #40372e;
+    border-left-color: #d6bd8b;
+}
