@@ -139,7 +139,13 @@ $(document).ready(function () {
 
         updateFavoriteCount();
     });
-
+$("#favoriteSuccess")
+    .text("Item added to favourites!")
+    .stop(true, true)
+    .fadeIn(300)
+    .delay(1500)
+    .fadeOut(300);
+    
     $("#favoriteList").on("click", ".remove-favorite", function () {
         $(this).closest("li").remove();
         updateFavoriteCount();
