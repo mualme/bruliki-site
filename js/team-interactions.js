@@ -138,24 +138,26 @@ $(document).ready(function () {
         $("#favoriteInput").val("").focus();
 
         updateFavoriteCount();
-    });
-$("#favoriteSuccess")
+   $("#favoriteSuccess")
     .text("Item added to favourites!")
     .stop(true, true)
     .fadeIn(300)
     .delay(1500)
     .fadeOut(300);
+    });
+
     
     $("#favoriteList").on("click", ".remove-favorite", function () {
         $(this).closest("li").remove();
         updateFavoriteCount();
-    });
-    $("#favoriteSuccess")
+         $("#favoriteSuccess")
     .text("Item removed from favourites!")
     .stop(true, true)
     .fadeIn(300)
     .delay(1500)
     .fadeOut(300);
+    });
+   
     
 
     updateFavoriteCount();
