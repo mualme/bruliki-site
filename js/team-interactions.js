@@ -1,8 +1,5 @@
 
-
 $(document).ready(function () {
-
-    console.log("jQuery is ready!");
 
     $("#welcomeButton").on("click", function () {
         const name = $("#visitorName").val().trim();
@@ -18,23 +15,36 @@ $(document).ready(function () {
         }
     });
 
-    $("#themeButton").on("click", function () {
-        $("body").toggleClass("dark-theme");
 
-        const isDark = $("body").hasClass("dark-theme");
+    function applyTheme(theme) {
+        const isDark = theme === "dark";
+
+        $("body").toggleClass("dark-theme", isDark);
 
         if (isDark) {
-            $(this).text("Switch to light theme");
+            $("#themeIcon").text("☀");
+            $("#themeButton").attr(
+                "aria-label",
+                "Switch to light theme"
+            );
         } else {
-            $(this).text("Switch to dark theme");
+            $("#themeIcon").text("☾");
+            $("#themeButton").attr(
+                "aria-label",
+                "Switch to dark theme"
+            );
         }
+    }
 
-        $("#themeStatus")
-            .stop(true, true)
-            .text("Theme changed successfully!")
-            .fadeIn(300)
-            .delay(1200)
-            .fadeOut(500);
+    const savedTheme = localStorage.getItem("brulikiTheme") || "light";
+    applyTheme(savedTheme);
+
+    $("#themeButton").on("click", function () {
+        const isDark = !$("body").hasClass("dark-theme");
+        const newTheme = isDark ? "dark" : "light";
+
+        applyTheme(newTheme);
+        localStorage.setItem("brulikiTheme", newTheme);
     });
 
 
@@ -44,10 +54,10 @@ $(document).ready(function () {
         const button = $(this);
         const answerId = button.attr("aria-controls");
         const answer = $("#" + answerId);
+
         const isOpen = button.attr("aria-expanded") === "true";
 
         answer.stop(true, true).slideToggle(300);
-
         button.attr("aria-expanded", String(!isOpen));
     });
 
@@ -90,8 +100,7 @@ $(document).ready(function () {
     $("#categoryFilter").on("change", filterProducts);
 
 
-    // TASK 4: Dynamic Favourite List
-    function updateFavoriteList() {
+    function updateFavoriteCount() {
         const count = $("#favoriteList li").length;
 
         $("#favoriteCount").text("Items: " + count);
@@ -124,20 +133,18 @@ $(document).ready(function () {
             .text("Remove");
 
         newItem.append(itemText, " ", removeButton);
-
         $("#favoriteList").append(newItem);
 
         $("#favoriteInput").val("").focus();
 
-        updateFavoriteList();
+        updateFavoriteCount();
     });
 
     $("#favoriteList").on("click", ".remove-favorite", function () {
         $(this).closest("li").remove();
-
-        updateFavoriteList();
+        updateFavoriteCount();
     });
 
-    updateFavoriteList();
+    updateFavoriteCount();
 
 });
