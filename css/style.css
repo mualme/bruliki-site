@@ -1168,3 +1168,92 @@ body.dark-theme .favorite-success {
     background-color: #40372e;
     border-left-color: #d6bd8b;
 }
+
+
+.story-section,
+.story-section h1,
+.story-section h2,
+.story-section h3,
+.story-section p,
+.value-card,
+.value-card h2,
+.value-card h3,
+.value-card p,
+.featured-section,
+.featured-section h1,
+.featured-section h2,
+.featured-section h3,
+.featured-section p,
+.form-section,
+.form-section h1,
+.form-section h2,
+.form-section h3,
+.form-section p,
+.form-section label,
+.contact-form,
+.contact-form label,
+.contact-form h1,
+.contact-form h2,
+.contact-form p {
+    color: #174735;
+}
+
+
+.card,
+.card h1,
+.card h2,
+.card h3,
+.card p,
+.card label,
+.welcome-panel,
+.welcome-panel h1,
+.welcome-panel h2,
+.welcome-panel p,
+.favorites-panel,
+.favorites-panel h2,
+.favorites-panel p,
+.faq-panel,
+.faq-panel h2,
+.faq-panel p {
+    color: #174735;
+}
+
+
+body.dark-theme,
+body.dark-theme header,
+body.dark-theme footer,
+body.dark-theme .hero,
+body.dark-theme .about-section,
+body.dark-theme .dark-section {
+    color: #F3E6C5;
+}
+
+
+body.dark-theme header a,
+body.dark-theme footer a,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme label {
+    color: #F3E6C5;
+}
+
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+    background-color: #302B26;
+    color: #F3E6C5;
+    border-color: #B99B62;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: #D8CBAA;
+    opacity: 1;
+}
+
+body.dark-theme button {
+    color: #F3E6C5;
+}
