@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Bruliki</title>
+
+    <link rel="icon" type="image/jpeg" href="images/star.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Bruliki</a>
+            <button type="button" id="themeButton" class="theme-toggle"
+                    aria-label="Switch to dark theme" title="Switch theme">
+                <span id="themeIcon" aria-hidden="true">☾</span>
+            </button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html" aria-current="page">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="py-5">
+        <div class="container" style="max-width: 550px;">
+            <section class="p-4 border rounded shadow-sm bg-white">
+                <h1 class="text-center mb-2">Welcome Back</h1>
+                <p class="text-center text-muted mb-4">
+                    Log in to your Bruliki account.
+                </p>
+
+                <form id="loginForm" novalidate>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email Address:</label>
+                        <input type="email" class="form-control" id="loginEmail"
+                               autocomplete="email" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="loginPassword"
+                               autocomplete="current-password" required>
+                        <div class="invalid-feedback">
+                            Please enter your password.
+                        </div>
+                    </div>
+
+                    <p id="loginFeedback" class="mt-3" role="status"
+                       aria-live="polite"></p>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Log In
+                    </button>
+                </form>
+
+                <p class="text-center mt-4 mb-0">
+                    Don't have an account?
+                    <a href="register.html">Create an account</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 bg-light border-top">
+        <p class="mb-0">2026 Bruliki Luxury Accessories.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/team-interactions.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
