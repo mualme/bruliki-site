@@ -67,14 +67,36 @@
                         <div class="valid-feedback">Valid email!</div>
                         <div class="invalid-feedback">Please enter a valid email address.</div>
                     </div>
+                    <div class="mb-3">
+                        <label for="regPhone" class="form-label">Phone Number:</label>
+                        <input
+                            type="tel"
+                            class="form-control"
+                            id="regPhone"
+                            name="regPhone"
+                            placeholder="+7 700 123 45 67"
+                            pattern="^\+?[0-9\s()-]{10,20}$"
+                            required
+                            autocomplete="tel"
+                        >
+                        <div class="valid-feedback">Valid phone number!</div>
+                        <div class="invalid-feedback">
+                            Please enter a valid phone number.
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="password" class="form-label">Password:</label>
-                            <input type="password" class="form-control" id="password" name="password" required minlength="8">
+                            <input type="password" class="form-control" id="password" name="password"
+                                required minlength="8" autocomplete="new-password">                            
                             <div class="valid-feedback">Strong password!</div>
-                            <div class="invalid-feedback">Minimum 8 characters required.</div>
+                            <div class="invalid-feedback">
+                                Use at least 8 characters, including uppercase, lowercase,
+                                a number and a special character.
+                            </div>                        
                         </div>
+                        
                         <div class="col-md-6 mb-3">
                             <label for="confirmPassword" class="form-label">Confirm Password:</label>
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required minlength="8">
