@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
   
@@ -9,6 +8,7 @@ $(document).ready(function () {
 
         $("#username").val(params.get("name") || "");
         $("#email").val(params.get("email") || "");
+      $("#phone").val(params.get("phone") || "");
     }
 
  
@@ -18,6 +18,7 @@ $(document).ready(function () {
         const name = $("#username").val().trim();
         const email = $("#email").val().trim();
         const message = $("#comment").val().trim();
+      const phone = $("#phone").val().trim();
 
         let isValid = true;
 
@@ -55,7 +56,20 @@ $(document).ready(function () {
                 .removeClass("is-invalid")
                 .addClass("is-valid");
         }
-
+      const phonePattern = /^\+?[0-9\s()-]{10,20}$/;
+      if (!phonePattern.test(phone)) {
+        $("#phone")
+          .removeClass("is-valid")
+          .addClass("is-invalid");
+        $("#phone-feedback").text(
+          "Please enter a valid phone number."
+        );
+        isValid = false;
+      } else {
+        $("#phone")
+          .removeClass("is-invalid")
+          .addClass("is-valid");
+      }
 
         if (message.length < 10 || message.length > 500) {
             $("#comment")
@@ -91,7 +105,7 @@ $(document).ready(function () {
     });
 
     
-    $("#contactForm").on("input", "input, textarea", function () {
+    $("#contactForm").on("input", "input, textarea, select", function () {
         $(this).removeClass("is-invalid is-valid");
 
         $("#contactFeedback")
