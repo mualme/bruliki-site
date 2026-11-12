@@ -64,6 +64,8 @@ $(document).ready(function () {
     function filterProducts() {
         const searchText = $("#productSearch").val().trim().toLowerCase();
         const selectedCategory = $("#categoryFilter").val();
+        localStorage.setItem("brulikiSearch", $("#productSearch").val());
+        localStorage.setItem("brulikiCategory", selectedCategory);
 
         let count = 0;
 
@@ -95,8 +97,21 @@ $(document).ready(function () {
         }
     }
 
+if ($("#productSearch").length && $("#categoryFilter").length) {
+
+    $("#productSearch").val(
+        localStorage.getItem("brulikiSearch") || ""
+    );
+
+    $("#categoryFilter").val(
+        localStorage.getItem("brulikiCategory") || "all"
+    );
+
+    filterProducts();
+
     $("#productSearch").on("input", filterProducts);
     $("#categoryFilter").on("change", filterProducts);
+}
 
 
     function updateFavoriteCount() {
