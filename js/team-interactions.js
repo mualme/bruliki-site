@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     $("#welcomeButton").on("click", function () {
