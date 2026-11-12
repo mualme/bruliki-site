@@ -108,7 +108,6 @@
                         </div>
                     </div>
 
-                    <!-- Email -->
                     <div class="mb-3">
                         <label for="email" class="form-label">
                             Email Address: *
@@ -135,8 +134,28 @@
                             Please provide a valid email address.
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">
+                            Phone Number: *
+                        </label>
+                        <input
+                            type="tel"
+                            class="form-control"
+                            id="phone"
+                            name="phone"
+                            placeholder="+7 700 123 45 67"
+                            pattern="^\+?[0-9\s()-]{10,20}$"
+                            required
+                            autocomplete="tel"
+                            aria-describedby="phone-feedback"
+                        >
 
-                    <!-- Message -->
+    <div class="invalid-feedback" id="phone-feedback">
+        Please enter a valid phone number.
+    </div>
+</div>
+
+
                     <div class="mb-3">
                         <label for="comment" class="form-label">
                             Your Message / Order Details: *
